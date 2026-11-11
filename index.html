@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio personal de Bertie Norton, diseñadora UI y fotógrafa.">
+  <title>Bertie Norton | Portafolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root {
+      --purple: #9563df;
+      --purple-dark: #8654d2;
+      --pink: #f36f98;
+      --ink: #292536;
+      --muted: #817b8d;
+      --page: #f5f7fc;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: "Poppins", sans-serif;
+    }
+    .page {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 46px 0 70px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1.12fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .intro { padding: 0 0 8px 20px; }
+    h1 {
+      color: var(--purple);
+      font-size: clamp(3.3rem, 6vw, 5.4rem);
+      line-height: 1.03;
+      letter-spacing: -3px;
+      margin: 0 0 24px;
+      font-weight: 700;
+    }
+    .intro p {
+      max-width: 390px;
+      font-size: 14px;
+      line-height: 2;
+      color: #292733;
+      margin: 0 0 26px;
+    }
+    .hero-photo {
+      width: 100%;
+      height: 490px;
+      object-fit: cover;
+      object-position: center 32%;
+      border-radius: 0 0 0 16px;
+      display: block;
+      background: #e6e7eb;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 5px;
+      background: var(--pink);
+      color: white;
+      padding: 14px 28px;
+      min-width: 230px;
+      text-decoration: none;
+      font: 600 11px "Poppins", sans-serif;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: transform .2s, background .2s;
+    }
+    .btn:hover { background: #e85e89; transform: translateY(-2px); }
+    .details {
+      display: grid;
+      grid-template-columns: 355px 1fr;
+      gap: 54px;
+      margin: 82px 0 0;
+      align-items: start;
+    }
+    .profile-card {
+      background: var(--purple);
+      color: white;
+      border-radius: 17px;
+      padding: 36px 34px 30px;
+      min-height: 590px;
+      box-shadow: 0 10px 28px rgba(116, 77, 183, .08);
+    }
+    .info-item { margin-bottom: 24px; }
+    .info-label {
+      display: block;
+      color: rgba(255,255,255,.72);
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .info-value { font-size: 13px; line-height: 1.7; font-weight: 300; }
+    .socials { display: flex; gap: 16px; margin-top: 8px; }
+    .socials a { color: white; font-size: 16px; transition: opacity .2s; }
+    .socials a:hover { opacity: .65; }
+    .content { padding-top: 20px; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(130px, 1fr));
+      gap: 48px 54px;
+      margin-bottom: 44px;
+    }
+    .stat-label {
+      color: var(--purple);
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .stat-number {
+      color: var(--pink);
+      font-size: 43px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+    h2 {
+      color: var(--purple);
+      font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+      line-height: 1.45;
+      margin: 0 0 14px;
+      font-weight: 700;
+    }
+    .bio p {
+      color: #8d82a0;
+      font-size: 12px;
+      line-height: 2.05;
+      margin: 0 0 24px;
+    }
+    .bio .btn { min-width: 260px; }
+    .small-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 34px;
+    }
+    .small-gallery img {
+      width: 100%;
+      height: 125px;
+      object-fit: cover;
+      border-radius: 10px;
+      filter: saturate(.88);
+    }
+    footer {
+      text-align: center;
+      color: #a59eaf;
+      font-size: 11px;
+      margin-top: 64px;
+    }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 32px, 560px); padding-top: 26px; }
+      .hero { grid-template-columns: 1fr; gap: 26px; }
+      .intro { padding: 0 4px; }
+      h1 { font-size: clamp(3rem, 13vw, 4.6rem); letter-spacing: -2px; }
+      .hero-photo { height: 390px; border-radius: 12px; }
+      .details { grid-template-columns: 1fr; gap: 30px; margin-top: 46px; }
+      .profile-card { min-height: auto; }
+      .content { padding: 0 4px; }
+      .stats { gap: 30px 20px; margin-bottom: 38px; }
+      .stat-number { font-size: 38px; }
+    }
+    @media (max-width: 380px) {
+      .stats { grid-template-columns: 1fr 1fr; }
+      .profile-card { padding: 28px 24px; }
+      .hero-photo { height: 320px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-label="Presentación">
+      <div class="intro">
+        <h1>Hola<br>Soy Bertie<br>Norton</h1>
+        <p>
+          Diseñadora de UI, fotógrafa y entusiasta de los viajes.
+          Me encanta crear experiencias digitales atractivas y capturar
+          momentos que cuentan historias.
+        </p>
+        <button class="btn" type="button" onclick="downloadCV()">
+          DESCARGAR CV <i class="fa-solid fa-download" aria-hidden="true"></i>
+        </button>
+      </div>
+      <img
+        class="hero-photo"
+        src="https://images.unsplash.com/photo-1629747206605-de372cd3c498?auto=format&fit=crop&w=1100&q=85"
+        alt="Retrato de una mujer con gafas y camisa blanca"
+        onerror="this.src='https://images.unsplash.com/photo-1567046318559-b29fcd7bf471?auto=format&fit=crop&w=1100&q=85'">
+    </section>
+
+    <section class="details" aria-label="Información y experiencia">
+      <aside class="profile-card">
+        <div class="info-item"><span class="info-label">NOMBRE</span><div class="info-value">Bertie Norton</div></div>
+        <div class="info-item"><span class="info-label">CUMPLEAÑOS</span><div class="info-value">25. 05. 1989</div></div>
+        <div class="info-item"><span class="info-label">PAPEL</span><div class="info-value">Diseñadora encargada</div></div>
+        <div class="info-item"><span class="info-label">CORREO ELECTRÓNICO</span><div class="info-value">disenadora@example.com</div></div>
+        <div class="info-item"><span class="info-label">TELÉFONO</span><div class="info-value">(+987) 987 654 321</div></div>
+        <div class="info-item"><span class="info-label">SITIO WEB</span><div class="info-value">www.sitioweb.com</div></div>
+        <div class="info-item"><span class="info-label">LOCALIZACIÓN</span><div class="info-value">Nueva York, Estados Unidos</div></div>
+        <div class="info-item"><span class="info-label">INTERESES</span><div class="info-value">Juegos, libros, películas</div></div>
+        <div class="info-item" style="margin-bottom:0">
+          <span class="info-label">SOCIAL</span>
+          <div class="socials">
+            <a href="https://facebook.com" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://instagram.com" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <div class="stats">
+          <div><div class="stat-label">PREMIOS GANADOS</div><div class="stat-number">17</div></div>
+          <div><div class="stat-label">AÑOS XP</div><div class="stat-number">12+</div></div>
+          <div><div class="stat-label">CLIENTELA</div><div class="stat-number">108</div></div>
+          <div><div class="stat-label">PROYECTOS</div><div class="stat-number">150</div></div>
+        </div>
+        <article class="bio">
+          <h2>Nam ultrices ultrices nec tortor pulvinar esteras loremips est</h2>
+          <p>
+            Etiam erat velit scelerisque in dictum non consectetur. Nisl purus in
+            mollis nunc sed id semper. Cras fermentum odio eu feugiat pretium nibh
+            ipsum. Tristique senectus et netus et malesuada fames. Sem fringilla ut
+            morbi tincidunt augue interdum velit. Nunc sed blandit libero volutpat
+            sed cras. Risus quis varius quam quisque id. Semper auctor neque vitae
+            tempus quam pellentesque nec nam aliquam.
+          </p>
+          <button class="btn" type="button" onclick="downloadCV()">
+            DESCARGAR CV <i class="fa-solid fa-download" aria-hidden="true"></i>
+          </button>
+          <div class="small-gallery" aria-label="Fotografías adicionales">
+            <img src="https://images.unsplash.com/photo-1567046318559-b29fcd7bf471?auto=format&fit=crop&w=600&q=80" alt="Retrato de mujer con camiseta blanca" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1508002366005-75a695ee2d17?auto=format&fit=crop&w=600&q=80" alt="Mujer sonriendo en un retrato" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </section>
+    <footer>© 2026 Bertie Norton · Portafolio personal</footer>
+  </main>
+
+  <script>
+    function downloadCV() {
+      const cv = `BERTIE NORTON
+Diseñadora UI · Fotógrafa
+
+PERFIL
+Diseñadora de interfaces y fotógrafa. Apasionada por crear experiencias
+digitales atractivas, funcionales y centradas en las personas.
+
+EXPERIENCIA
+12+ años de experiencia
+17 premios · 108 clientes · 150 proyectos
+
+CONTACTO
+disenadora@example.com
+(+987) 987 654 321
+www.sitioweb.com
+
+Intereses: juegos, libros, películas y viajes.`;
+      const blob = new Blob([cv], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "CV-Bertie-Norton.txt";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
